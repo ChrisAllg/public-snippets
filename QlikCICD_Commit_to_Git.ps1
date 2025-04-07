@@ -31,7 +31,6 @@ try {
     git push -u origin main
     # Delete local files (excluding .git) after successful push
     Remove-Item -Path $AppExportDir -Recurse -Force
-    # Get-ChildItem -Path $AppExportdir -Exclude ".git" | Remove-Item -Recurse -Force
 } catch {
     Write-Error "Git push failed. Check network or repository settings."
     exit 1
