@@ -20,7 +20,7 @@ git ls-files --others --exclude-standard | ForEach-Object { git add $_ }
 git commit -m $commitMessage
 
 if (!(git remote | Select-String -Pattern "origin")) {
-    git remote add origin "[ORIGIN]"
+    git remote add origin "https://github.com/chrisallg/CICDDemo2025.git"
 }
 
 git checkout main
@@ -33,7 +33,7 @@ try {
     Remove-Item -Path $AppExportDir -Recurse -Force
     # Get-ChildItem -Path $AppExportdir -Exclude ".git" | Remove-Item -Recurse -Force
 } catch {
-    Write-Error "Folder could not be removed!"
+    Write-Error "Git push failed. Check network or repository settings."
     exit 1
 }
 
