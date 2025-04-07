@@ -33,7 +33,7 @@ try {
     Remove-Item -Path $AppExportDir -Recurse -Force
     # Get-ChildItem -Path $AppExportdir -Exclude ".git" | Remove-Item -Recurse -Force
 } catch {
-    Write-Error "Git push failed. Check network or repository settings."
+    Write-Error "Folder could not be removed!"
     exit 1
 }
 
